@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="GameOverScreen" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 478.0
+margin_top = 280.0
+margin_right = 755.0
+margin_bottom = 387.0
+text = "GAME OVER"
