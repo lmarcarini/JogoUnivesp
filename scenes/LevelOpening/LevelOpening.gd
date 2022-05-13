@@ -9,5 +9,5 @@ func _ready():
 	textLabel = get_node("RichTextLabel")
 	_set_message(message)
 
-func _set_message(message):
-	textLabel.bbcode_text = "[center]"+message
+func _set_message(msg):
+	textLabel.bbcode_text = "[center]"+msg

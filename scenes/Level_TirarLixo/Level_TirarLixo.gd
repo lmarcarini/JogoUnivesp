@@ -12,6 +12,7 @@ var currentState=State.PLAYING
 
 var mensagem = "Não deixe água parada!"
 var timer
+var mensagem_sucesso=preload("res://entities/mensagemSucesso/mensagemSucesso.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,4 +39,7 @@ func _on_gameover():
 func _on_success():
 	print("success")
 	currentState=State.SUCCESS
+	add_child(mensagem_sucesso.instance())
+	get_node("Timer").queue_free()
+	yield(get_tree().create_timer(1.5), "timeout")
 	emit_signal("level_change","success")
