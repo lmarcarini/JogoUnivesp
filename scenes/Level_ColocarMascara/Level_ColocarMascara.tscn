@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://entities/timer/Timer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/hand/Hand.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Level_ColocarMascara/Mascara.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Level_ColocarMascara/Rosto.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Level_ColocarMascara/collision_shape_idle.tres" type="Shape2D" id=5]
+[ext_resource path="res://scenes/Level_ColocarMascara/Level_ColocarMascara.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 150, 180 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Hand" parent="." instance=ExtResource( 2 )]
+position = Vector2( 103, 107 )
+
+[node name="Timer" parent="." instance=ExtResource( 1 )]
+margin_left = 909.0
+margin_top = 85.0
+margin_right = 909.0
+margin_bottom = 85.0
+
+[node name="Rosto" type="Node2D" parent="."]
+position = Vector2( 358, 88 )
+script = ExtResource( 4 )
+
+[node name="PlaceholderImage" type="ColorRect" parent="Rosto"]
+margin_right = 290.0
+margin_bottom = 361.0
+mouse_filter = 2
+color = Color( 0.529412, 0.490196, 0.329412, 1 )
+
+[node name="Area2D" type="Area2D" parent="Rosto"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rosto/Area2D"]
+position = Vector2( 145, 179 )
+shape = SubResource( 1 )
+
+[node name="Mascara" type="Node2D" parent="."]
+position = Vector2( 827, 342 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="Mascara"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -39.0
+margin_right = 19.0
+margin_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="Mascara"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mascara/Area2D"]
+shape = ExtResource( 5 )
+
+[connection signal="input_event" from="Mascara/Area2D" to="Rosto" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="Mascara/Area2D" to="Mascara" method="_on_Area2D_input_event"]
