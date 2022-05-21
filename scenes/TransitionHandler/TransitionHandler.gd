@@ -5,9 +5,15 @@ var level
 var nextLevel
 var LevelOpening
 var audioPlayer
+var levelsArray = [
+	"res://scenes/Level_TirarLixo/Level_TirarLixo.tscn",
+	"res://scenes/Level_ColocarMascara/Level_ColocarMascara.tscn",
+	"res://scenes/Level_ColocarMascara/Level_PassarAlcool.tscn"
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	levelsArray.shuffle()
 	level = get_node("Level")
 	LevelOpening = get_node("LevelOpening")
 	audioPlayer = get_node("AudioStreamPlayer")
@@ -21,9 +27,11 @@ func _on_level_change(level_name):
 	match level_name:
 		"start":
 			audioPlayer.play()
-			_start_level("res://scenes/Level_TirarLixo/Level_TirarLixo.tscn")
+			_start_level(levelsArray.pop_front())
 		"success":
-			_start_level("res://scenes/Level_TirarLixo/Level_TirarLixo.tscn")
+			if levelsArray.size == 0:
+				_on_zeramento()
+			_start_level(levelsArray.pop_front())
 		"gameover":
 			nextLevel = load("res://scenes/GameOver/GameOver.tscn").instance()
 			add_child(nextLevel)
@@ -40,3 +48,9 @@ func _start_level(levelPath):
 	level = nextLevel
 	level.connect("level_change", self, "_on_level_change")
 	LevelOpening.visible=false
+
+func _on_zeramento():
+	nextLevel = load("res://scenes/GameOver/GameOver.tscn").instance()
+	add_child(nextLevel)
+	level.queue_free()
+	level = nextLevel

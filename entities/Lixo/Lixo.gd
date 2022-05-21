@@ -22,7 +22,6 @@ func _on_Area2D_input_event(_viewport, event, _shape_idx) -> void:
 	and event.pressed:
 		print("Agarrei")
 		current_state=State.GRABBED
-	
 
 func _input(event):
 	if event is InputEventMouseButton \
