@@ -2,7 +2,7 @@ extends Node2D
 
 
 const RIGHT_BORDER =  930
-const LEFT_BORDER = 99
+const LEFT_BORDER = 300
 
 const Velocidade = 400
 
@@ -19,6 +19,6 @@ func _physics_process(delta):
 	
 	if global_position.x >= 930:
 		Dirx = -1
-	if global_position.x <= 99:
+	if global_position.x <= 300:
 		Dirx = +1
 	pass

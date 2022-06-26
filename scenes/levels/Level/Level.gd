@@ -10,7 +10,6 @@ enum State{
 
 var currentState=State.PLAYING
 
-var mensagem = "Aplique o alcool"
 var timer
 var mensagem_sucesso=preload("res://entities/mensagemSucesso/mensagemSucesso.tscn")
 
@@ -18,17 +17,6 @@ var mensagem_sucesso=preload("res://entities/mensagemSucesso/mensagemSucesso.tsc
 func _ready():
 	timer=get_node("Timer")
 	timer.connect("timer_ended",self,"_on_gameover")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if(_check_win_condition()):
-		_on_success()
-
-func _check_win_condition() -> bool:
-	var lixos = get_tree().get_nodes_in_group("Lixo")
-	return \
-	currentState==State.PLAYING and \
-	lixos.size()==0
 
 func _on_gameover():
 	if(currentState==State.PLAYING):

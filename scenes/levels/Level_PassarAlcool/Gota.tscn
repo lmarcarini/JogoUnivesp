@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/sprites/Gota_px.png" type="Texture" id=1]
-[ext_resource path="res://scenes/Level_PassarAlcool/Gota.gd" type="Script" id=2]
+[ext_resource path="res://scenes/levels/Level_PassarAlcool/Gota.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.85, 2.5 )
@@ -25,3 +25,4 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

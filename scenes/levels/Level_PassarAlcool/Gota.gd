@@ -18,10 +18,13 @@ func _process(delta):
 	var Diry = +1
 	
 	translate(Vector2(0, Diry) * Velocidade * delta)
-	
-	pass
 
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
-	pass # Replace with function body.
+
+
+func _on_Area2D_area_entered(area):
+	print(area.get_parent().name)
+	if (area.get_parent().name == "Mao"):
+		get_parent()._on_success()

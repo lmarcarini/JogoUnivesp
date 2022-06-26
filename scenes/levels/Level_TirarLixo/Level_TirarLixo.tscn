@@ -2,7 +2,7 @@
 
 [ext_resource path="res://entities/hand/Hand.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/timer/Timer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Level_TirarLixo/Level_TirarLixo.gd" type="Script" id=3]
+[ext_resource path="res://scenes/levels/Level_TirarLixo/Level_TirarLixo.gd" type="Script" id=3]
 [ext_resource path="res://entities/Lixo/Lixo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/Lixeira/Lixeira.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/garrafas.png" type="Texture" id=6]
