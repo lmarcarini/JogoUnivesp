@@ -19,15 +19,16 @@ func _ready():
 	timer.connect("timer_ended",self,"_on_gameover")
 
 func _on_gameover():
-	if(currentState==State.PLAYING):
-		print("gameover")
-		currentState=State.GAMEOVER
-		emit_signal("level_change","gameover")
+	if(currentState!=State.PLAYING):
+		return
+	currentState=State.GAMEOVER
+	emit_signal("level_change","gameover")
 
 func _on_success():
-	print("success")
+	if(currentState!=State.PLAYING):
+		return
 	currentState=State.SUCCESS
 	add_child(mensagem_sucesso.instance())
-	get_node("Timer").queue_free()
+	timer.queue_free()
 	yield(get_tree().create_timer(1.5), "timeout")
 	emit_signal("level_change","success")

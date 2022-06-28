@@ -6,19 +6,18 @@ var nextLevel
 var LevelOpening
 var audioPlayer
 var levelsArray = [
-	"res://scenes/levels/Level_TirarLixo/Level_TirarLixo.tscn",
 	"res://scenes/levels/Level_ColocarMascara/Level_ColocarMascara.tscn",
-	"res://scenes/levels/Level_PassarAlcool/PassarAlcool.tscn"
+	"res://scenes/levels/Level_TirarLixo/Level_TirarLixo.tscn",
+	"res://scenes/levels/Level_PassarAlcool/PassarAlcool.tscn",
+	"res://scenes/levels/SitOnChair/SitOnChair.tscn"
 ]
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	levelsArray.shuffle()
+	#levelsArray.shuffle()
 	level = get_node("Level")
 	LevelOpening = get_node("LevelOpening")
 	audioPlayer = get_node("AudioStreamPlayer")
 	level.connect("level_change", self, "_on_level_change")
-	pass # Replace with function body.
 	
 	
 func _on_level_change(level_name):
@@ -29,7 +28,6 @@ func _on_level_change(level_name):
 			audioPlayer.play()
 			_start_level(levelsArray.pop_front())
 		"success":
-			print(levelsArray.size())
 			if levelsArray.size() == 0:
 				_on_zeramento()
 			else:

@@ -25,6 +25,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Area2D_area_entered(area):
-	print(area.get_parent().name)
 	if (area.get_parent().name == "Mao"):
 		get_parent()._on_success()

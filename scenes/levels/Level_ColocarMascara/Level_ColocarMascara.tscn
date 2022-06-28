@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/timer/Timer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/hand/Hand.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/levels/Level_ColocarMascara/Mascara.gd" type="Script" id=3]
+[ext_resource path="res://scenes/levels/Level_ColocarMascara/Mascara.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/levels/Level_ColocarMascara/Rosto.gd" type="Script" id=4]
-[ext_resource path="res://scenes/levels/Level_ColocarMascara/collision_shape_idle.tres" type="Shape2D" id=5]
 [ext_resource path="res://scenes/levels/Level_ColocarMascara/Level_ColocarMascara.gd" type="Script" id=6]
-[ext_resource path="res://scenes/levels/Level_ColocarMascara/collision_shape_on_face.tres" type="Shape2D" id=7]
+[ext_resource path="res://assets/sprites/rosto.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 150, 180 )
@@ -24,56 +23,18 @@ margin_bottom = 85.0
 position = Vector2( 358, 88 )
 script = ExtResource( 4 )
 
-[node name="PlaceholderImage" type="ColorRect" parent="Rosto"]
-margin_right = 290.0
-margin_bottom = 361.0
-mouse_filter = 2
-color = Color( 0.529412, 0.490196, 0.329412, 1 )
-
 [node name="Area2D" type="Area2D" parent="Rosto"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rosto/Area2D"]
 position = Vector2( 145, 179 )
 shape = SubResource( 1 )
 
-[node name="Mascara" type="Node2D" parent="."]
-position = Vector2( 829, 340 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Sprite" type="Sprite" parent="Rosto"]
+position = Vector2( 146, 184 )
+texture = ExtResource( 8 )
 
-[node name="ColorRect" type="ColorRect" parent="Mascara"]
-margin_right = 40.0
-margin_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="Mascara"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mascara/Area2D"]
-position = Vector2( 20, 30 )
-shape = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionOnFace" type="CollisionShape2D" parent="Mascara/Area2D"]
-visible = false
-position = Vector2( 187, 20 )
-shape = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Mascara" parent="." instance=ExtResource( 3 )]
+position = Vector2( 73, 388 )
 
 [node name="Hand" parent="." instance=ExtResource( 2 )]
 position = Vector2( 103, 107 )
-
-[connection signal="input_event" from="Mascara/Area2D" to="Mascara" method="_on_Area2D_input_event"]

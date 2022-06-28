@@ -20,4 +20,4 @@ func _is_on_face(mouse_position):
 
 func _is_covering_mouth_and_nose(mouse_position):
 	var relative_position=_get_relative_position(mouse_position)
-	return ((relative_position.y>100 and relative_position.y<200))
+	return ((relative_position.y>180 and relative_position.y<220))
