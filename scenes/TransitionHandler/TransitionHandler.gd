@@ -6,6 +6,7 @@ var nextLevel
 var LevelOpening
 var audioPlayer
 var levelsArray = [
+	"res://scenes/levels/ScoopPoop/ScoopPoop.tscn",
 	"res://scenes/levels/Level_ColocarMascara/Level_ColocarMascara.tscn",
 	"res://scenes/levels/Level_TirarLixo/Level_TirarLixo.tscn",
 	"res://scenes/levels/Level_PassarAlcool/PassarAlcool.tscn",
