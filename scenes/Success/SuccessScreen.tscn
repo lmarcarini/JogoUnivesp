@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Success/SuccessScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/ReiniciarButtonHover.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/ReiniciarButton.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/kidscelebrating.png" type="Texture" id=4]
+
+[node name="SuccessScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1026.0
+margin_bottom = 608.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 506, 273 )
+texture = ExtResource( 4 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 12.0
+margin_top = 437.0
+margin_right = 362.0
+margin_bottom = 617.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

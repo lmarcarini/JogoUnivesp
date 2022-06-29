@@ -6,7 +6,7 @@
 [ext_resource path="res://entities/Lixo/Lixo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/Lixeira/Lixeira.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/garrafas.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/lixo.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/opencans.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/quintal_background.png" type="Texture" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -42,7 +42,7 @@ position = Vector2( 872, 397 )
 shape = SubResource( 1 )
 
 [node name="Sprite" parent="Lixo2/Area2D" index="1"]
-scale = Vector2( 0.15, 0.15 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="Lixo3" parent="." instance=ExtResource( 4 )]

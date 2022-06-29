@@ -26,4 +26,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Area2D_area_entered(area):
 	if (area.get_parent().name == "Mao"):
+		var maoNode = area.get_parent()
+		maoNode.Velocidade=0
 		get_parent()._on_success()

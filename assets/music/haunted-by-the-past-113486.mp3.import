@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/haunted-by-the-past-113486.mp3-30b140c51a4886e4821a9d9fad7e21f7.mp3str"
+
+[deps]
+
+source_file="res://assets/music/haunted-by-the-past-113486.mp3"
+dest_files=[ "res://.import/haunted-by-the-past-113486.mp3-30b140c51a4886e4821a9d9fad7e21f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

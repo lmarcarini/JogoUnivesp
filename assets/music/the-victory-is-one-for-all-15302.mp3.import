@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the-victory-is-one-for-all-15302.mp3-482d5293da444cec3cda0aff6021ad70.mp3str"
+
+[deps]
+
+source_file="res://assets/music/the-victory-is-one-for-all-15302.mp3"
+dest_files=[ "res://.import/the-victory-is-one-for-all-15302.mp3-482d5293da444cec3cda0aff6021ad70.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

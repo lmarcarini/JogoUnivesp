@@ -4,7 +4,7 @@ extends Node2D
 const RIGHT_BORDER =  930
 const LEFT_BORDER = 300
 
-const Velocidade = 400
+var Velocidade = 400
 
 var Dirx = +1
 
